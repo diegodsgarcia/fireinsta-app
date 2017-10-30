@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Meu nome</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="datas" padding>
+    <ion-row>
+      <ion-col col-4>
+        <ion-avatar>
+          <img src="./assets/imgs/profile.png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col col-8>
+        <ion-row>
+          <ion-col>
+            <span class="number">100</span>
+            <span class="text">text</span>
+          </ion-col>
+          <ion-col>
+            <span class="number">100</span>
+            <span class="text">text</span>
+          </ion-col>
+          <ion-col>
+            <span class="number">100</span>
+            <span class="text">text</span>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="description" padding>
+    <h4>Name</h4>
+    <p>Description</p>
+  </div>
+
+  <div class="photos">
+    <ion-row>
+      <ion-col col-4 *ngFor="let photo of photos">
+        <img src="./assets/imgs/profile.png" alt="">
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+</ion-content>
