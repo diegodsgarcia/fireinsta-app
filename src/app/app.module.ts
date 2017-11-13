@@ -7,7 +7,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePageModule } from './../pages/home/home.module';
 import { ProfilePageModule } from '../pages/profile/profile.module';
+import { SharePageModule } from "../pages/share/share.module";
 import { TabsPageModule } from '../pages/tabs/tabs.module';
+
+import { Camera } from "@ionic-native/camera";
+import { Geolocation } from "@ionic-native/geolocation";
+
 
 @NgModule({
   declarations: [
@@ -18,6 +23,7 @@ import { TabsPageModule } from '../pages/tabs/tabs.module';
     HomePageModule,
     TabsPageModule,
     ProfilePageModule,
+    SharePageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -27,6 +33,8 @@ import { TabsPageModule } from '../pages/tabs/tabs.module';
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
