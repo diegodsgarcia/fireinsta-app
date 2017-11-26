@@ -19,7 +19,7 @@
     <ion-label color="primary" floating>Digite aqui a descrição de sua foto</ion-label>
     <ion-input></ion-input>
   </ion-item>
-  <button ion-button icon-start>
+  <button ion-button icon-start (click)="getCurrentPosition()">
     <ion-icon name="map"></ion-icon>
     Adicionar localização
   </button>

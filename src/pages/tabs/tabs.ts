@@ -24,22 +24,24 @@ export class TabsPage {
   }
 
   openCamera() {
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.FILE_URI,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
-    };
+    // const options: CameraOptions = {
+    //   quality: 100,
+    //   destinationType: this.camera.DestinationType.FILE_URI,
+    //   encodingType: this.camera.EncodingType.JPEG,
+    //   mediaType: this.camera.MediaType.PICTURE
+    // };
 
-    this.camera.getPicture(options).then(
-      imageData => {
-        let base64Image = "data:image/jpeg;base64," + imageData;
-        this.navCtrl.push(SharePage, { photo: base64Image })
-      },
-      err => {
-        console.log('Você deve estar em um dispositivo com câmera!')
-      }
-    );
+    // this.camera.getPicture(options).then(
+    //   imageData => {
+    //     let base64Image = "data:image/jpeg;base64," + imageData;
+    //     this.navCtrl.push(SharePage, { photo: base64Image })
+    //   },
+    //   err => {
+    //     console.log('Você deve estar em um dispositivo com câmera!')
+    //   }
+    // );
+
+    this.navCtrl.push(SharePage, { photo: 'test' });
   }
 
 }
