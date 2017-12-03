@@ -19,6 +19,12 @@
   "exclude": [
     "node_modules"
   ],
+  "baseUrl": "./src",
+  "paths": {
+    "@app/env": [
+      "environments/environment"
+    ]
+  },
   "compileOnSave": false,
   "atom": {
     "rewriteTsconfig": false

@@ -16,15 +16,8 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
-
-export const firebaseConfig = {
-  apiKey: "AIzaSyASS0m-CUe7dDC_pbqxfzQ71DxsqCFfstI",
-  authDomain: "fireinsta-app.firebaseapp.com",
-  databaseURL: "https://fireinsta-app.firebaseio.com",
-  projectId: "fireinsta-app",
-  storageBucket: "fireinsta-app.appspot.com",
-  messagingSenderId: "1024941082336"
-};
+import { ENV } from '../environments/environment';
+import { StorageProvider } from '../providers/storage';
 
 @NgModule({
   declarations: [MyApp],
@@ -35,7 +28,7 @@ export const firebaseConfig = {
     ProfilePageModule,
     SharePageModule,
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(ENV),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -46,7 +39,8 @@ export const firebaseConfig = {
     Geolocation,
     Camera,
     NativeGeocoder,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    StorageProvider
   ]
 })
 export class AppModule {}
