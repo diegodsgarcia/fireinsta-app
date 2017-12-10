@@ -6,7 +6,7 @@ page-home {
   }
   .publish {
     .publish-info, .publish-buttons {
-      padding: 0 16px;
+      padding: 5px 16px;
     }
     .publish-info {
       max-height: 50px;
@@ -15,6 +15,16 @@ page-home {
       }
       ion-col:first-child {
         padding-left: 0;
+      }
+      ion-col:last-child {
+        position: relative;
+      }
+      ion-icon {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #696969;
       }
     }
     .publish-buttons {

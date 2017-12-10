@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="publish" *ngFor="let publish of publishs">
+  <div class="publish" *ngFor="let publish of publishs | async">
     <div class="publish-info">
       <ion-row>
         <ion-col col-2>
@@ -15,21 +15,24 @@
             <img src="./assets/imgs/profile.png">
           </ion-avatar>
         </ion-col>
-        <ion-col col-10>
-          <span class="publish-name">Name</span>
-          <span class="publish-location">Location</span>
+        <ion-col col-8>
+          <span class="publish-name">{{ publish.name }}</span>
+          <span class="publish-location">{{ publish.location }}</span>
+        </ion-col>
+        <ion-col col-2>
+          <ion-icon name="md-more" (click)="openOptions(publish)"></ion-icon>
         </ion-col>
       </ion-row>
     </div>
     <div class="publish-photo">
-      <img src="./assets/imgs/profile.png">
+      <img [src]="publish.image">
     </div>
     <div class="publish-buttons">
       <ion-icon name="heart-outline"></ion-icon>
-      <ion-icon name="ios-chatbubbles-outline"></ion-icon> 
+      <ion-icon name="ios-chatbubbles-outline"></ion-icon>
     </div>
     <div class="publish-description">
-      Description: lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae rerum ducimus cupiditate exercitationem optio?
+      {{ publish.description }}
     </div>
   </div>
 </ion-content>

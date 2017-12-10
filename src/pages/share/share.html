@@ -17,12 +17,12 @@
   <div class="photo"><img [src]="photo"></div>
   <ion-item>
     <ion-label color="primary" floating>Digite aqui a descrição de sua foto</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="description"></ion-input>
   </ion-item>
   <button ion-button icon-start (click)="getCurrentPosition()">
     <ion-icon name="map"></ion-icon>
     Adicionar localização
   </button>
   <div class="location">{{ location }}</div>
-  <button ion-button color="primary" full>Compartilhar agora</button>
+  <button ion-button color="primary" (click)="share()" full>Compartilhar agora</button>
 </ion-content>

@@ -41,8 +41,8 @@
 
   <div class="photos">
     <ion-row>
-      <ion-col col-4 *ngFor="let photo of photos">
-        <img src="./assets/imgs/profile.png" alt="">
+      <ion-col col-4 *ngFor="let photo of photos | async">
+        <img [src]="photo.image">
       </ion-col>
     </ion-row>
   </div>

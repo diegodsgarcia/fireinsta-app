@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { StorageProvider } from '../../providers/storage';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the ProfilePage page.
@@ -14,14 +16,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
+  photos: Observable<any[]>;
 
-  photos = [1,2,3,4,5,6,7,8,9]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private storage: StorageProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+    this.photos = this.storage.getPublishs()
   }
 
 }
